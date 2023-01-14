@@ -26,7 +26,7 @@ const cartReducer = (state, event) => {
 };
 
 const CartProvider = props => {
-    const [cartState, dispatchCart] = useReducer(cartReducer, defaultCart, () => {});
+    const [cartState, dispatchCart] = useReducer(cartReducer, {}, () => defaultCart);
 
     const addItemToCart = (item) => {
         dispatchCart({action: 'ADD_ITEM', item: item});
